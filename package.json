@@ -1,0 +1,16 @@
+{
+  "name": "regexforce",
+  "version": "0.1.0",
+  "description": "regular expression brute force finder",
+  "main": "regexforce.js",
+  "dependencies": {
+    "clear": "0.0.1",
+    "minimist": "~1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steven-Ireland",
+  "license": "BSD-2-Clause"
+}
