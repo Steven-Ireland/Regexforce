@@ -7,6 +7,9 @@ if (args['g'] === undefined || args['b'] === undefined || args['n'] === undefine
 	console.log("Arguments invalid: node regexforce.js -g goodfile -b badfile -n size");
 	return 0;
 }
+
+var generic = args['generic'];
+
 var good = readFile(args['g']);
 var bad = readFile(args['b']);
 
@@ -14,7 +17,12 @@ var regexes = readFile('regexes.reference', '#');
 
 var characters = getChars(good, bad);
 
-var possibilities = characters.concat(regexes);
+var possibilities = null;
+if (!generic) {
+	possibilities = characters.concat(regexes);
+} else {
+	possibilities = regexes;
+}
 
 var positions = args['n'];
 
@@ -22,7 +30,7 @@ var totalPossibilites = Math.pow(possibilities.length, positions);
 var completedPossibilities = 0;
 var validRegexes = [];
 
-//console.log(possibilities)
+console.log(possibilities)
 generateRegex(positions, "");
 outputProgress();
 
